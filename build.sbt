@@ -26,7 +26,11 @@ libraryDependencies ++= Seq(
   "org.springframework" % "spring-context-support" % "3.1.1.RELEASE",
   "org.springframework" % "spring-tx" % "3.1.1.RELEASE",
   "org.springframework" % "spring-jdbc" % "3.1.1.RELEASE",
-  "org.springframework" % "spring-webmvc" % "3.1.1.RELEASE"
+  "org.springframework" % "spring-web" % "3.1.1.RELEASE",
+  "org.springframework" % "spring-webmvc" % "3.1.1.RELEASE",
+  "org.slf4j" % "slf4j-api" % "1.6.4",
+  "org.slf4j" % "slf4j-log4j12" % "1.6.4",
+  "log4j" % "log4j" % "1.2.16"
 )
 
 
