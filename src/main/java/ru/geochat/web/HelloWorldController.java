@@ -13,13 +13,13 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @Controller
 @RequestMapping("/hello")
 public class HelloWorldController {
-	
-	private static Logger logger = LoggerFactory.getLogger(HelloWorldController.class);
-	
-	@RequestMapping(value = "/say/{name}", method = RequestMethod.GET)
-	public void hello(@PathVariable("name") String name, Writer writer) throws IOException {
-		logger.info("Invoked rest method hello with param {}", name);
-		writer.write("Hello, " + name);
-	}
+
+  private static Logger logger = LoggerFactory.getLogger(HelloWorldController.class);
+
+  @RequestMapping(value = "/say/{name}", method = RequestMethod.GET)
+  public void hello(@PathVariable("name") String name, Writer writer) throws IOException {
+    logger.info("Invoked rest method hello with param {}", name);
+    writer.write("Hello, " + name + "!");
+  }
 
 }
