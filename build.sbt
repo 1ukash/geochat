@@ -19,6 +19,7 @@ libraryDependencies ++= Seq(
   "org.eclipse.jetty" % "jetty-webapp" % "8.0.0.M3" % "container",
   "org.mortbay.jetty" % "jsp-impl" % "2.2.2.b05.0" % "container",
   "javax.servlet.jsp" % "jsp-api" % "2.1" % "container",
+  "javax.servlet" % "jstl" % "1.2",
   "org.springframework" % "spring-core" % "3.1.1.RELEASE",
   "org.springframework" % "spring-beans" % "3.1.1.RELEASE",
   "org.springframework" % "spring-aop" % "3.1.1.RELEASE",

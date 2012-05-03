@@ -19,7 +19,7 @@ public class HelloWorldController {
   @RequestMapping(value = "/say/{name}", method = RequestMethod.GET)
   public void hello(@PathVariable("name") String name, Writer writer) throws IOException {
     logger.info("Invoked rest method hello with param {}", name);
-    writer.write("Hello, " + name + "!");
+    writer.write("Hello, " + name);
   }
 
 }
