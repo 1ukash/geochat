@@ -9,15 +9,20 @@ seq(webSettings :_*)
 port in container.Configuration := 8080
 
 externalResolvers <<= resolvers map { rs =>
-  Resolver.withDefaultResolvers(rs, scalaTools = false)
+  Resolver.withDefaultResolvers(rs, mavenCentral=true, scalaTools = false)
 }
 
+/*
+ * Dependency hell:
+ * http://stackoverflow.com/questions/4235082/configuring-jetty-jsp-support-in-embedded-mode-in-maven-project
+ * http://stackoverflow.com/questions/2151075/cannot-load-jstl-taglib-within-embedded-jetty-server
+ * http://stackoverflow.com/questions/9889674/sbt-jetty-and-servlet-3-0
+ *
+ */
 libraryDependencies ++= Seq(
-  "org.mortbay.jetty" % "servlet-api" % "3.0.20100224" % "provided",
-  "org.eclipse.jetty" % "jetty-server" % "8.0.0.M3" % "container",
-  "org.eclipse.jetty" % "jetty-util" % "8.0.0.M3" % "container",
-  "org.eclipse.jetty" % "jetty-webapp" % "8.0.0.M3" % "container",
-  "org.mortbay.jetty" % "jsp-impl" % "2.2.2.b05.0" % "container",
+  "javax.servlet" % "servlet-api" % "2.5" % "provided",
+  "org.eclipse.jetty" % "jetty-webapp" % "7.1.4.v20100610" % "container",
+  "org.mortbay.jetty" % "jsp-2.1-glassfish" % "2.1.v20100127" % "container",
   "javax.servlet.jsp" % "jsp-api" % "2.1" % "container",
   "javax.servlet" % "jstl" % "1.2",
   "org.springframework" % "spring-core" % "3.1.1.RELEASE",
@@ -33,5 +38,4 @@ libraryDependencies ++= Seq(
   "org.slf4j" % "slf4j-log4j12" % "1.6.4",
   "log4j" % "log4j" % "1.2.16"
 )
-
 
