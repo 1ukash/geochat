@@ -7,17 +7,20 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <title>GeoChat: Location</title>
-<script src="http://api-maps.yandex.ru/2.0/?load=package.full&lang=ru-RU" type="text/javascript"></script>
 <script src="${jquery_url}" type="text/javascript"></script>
+<script src="http://api-maps.yandex.ru/2.0/?load=package.full&lang=ru-RU" type="text/javascript"></script>
 
 <!-- Yandex Map -->
 <script type="text/javascript">
+
+ymaps.ready(function () { 
   var ymap = new ymaps.Map('ymap', {
     // центр и коэффициент масштабирования однозначно
     // определяют область картографирования
-    center: [55.76, 37.64],
-    zoom: 7
+    center: [60.02,30.37],
+    zoom: 15
   });
+});
 </script>
 
 </head>
