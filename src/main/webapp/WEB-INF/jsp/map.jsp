@@ -18,10 +18,8 @@
 <!-- Yandex Map -->
 <script type="text/javascript">
 
-var loc;
-var ymap;
 ymaps.ready(function () { 
-  ymap = new ymaps.Map('ymap', 
+  var ymap = new ymaps.Map('ymap', 
 		{
 	    center: [60.02, 30.37],
 	    zoom: 15
@@ -37,11 +35,13 @@ ymaps.ready(function () {
       }
       
       var coords = e.get('coordPosition');
-        ymap.balloon.open(coords, {
-          contentHeader: 'Я здесь!!',
-          contentBody: '<p>Местоположение: ' + [coords[0].toPrecision(6), coords[1].toPrecision(6)].join(', ') + '</p>',
-          contentFooter: '<sup>GeoChat Locator</sup>'
+      ymap.balloon.open(coords, {
+        contentHeader: 'Я здесь!!',
+        contentBody: '<p>Местоположение: ' + [coords[0].toPrecision(6), coords[1].toPrecision(6)].join(', ') + '</p>',
+        contentFooter: '<sup>GeoChat Locator</sup>'
       });
+      $('#latitude').val(coords[0].toPrecision(6));
+      $('#longitude').val(coords[1].toPrecision(6));
   });
   
 });
@@ -51,8 +51,39 @@ ymaps.ready(function () {
 <body>
 
   <h2>Location page</h2>
-  
-  <div id="ymap" class="map_container"/>
+  <h3>Click on map to set your location</h3>
+  <div id="ymap" class="map_container"></div>
+  <div id="message_box" class="message_container">
+    <form action="/" method="post">
+		  <table>
+		    <tr>
+		      <td>Имя пользователя:</td>
+		      <td>
+		        <input type="text" value="" name="nickname" id="nickname"/>
+		      </td>
+		    </tr>
+		    <tr>
+		      <td>Сообщение:</td>
+		      <td>
+		        <textarea rows="8" cols="40" id="message" name="message"></textarea> 
+		      </td>
+		    </tr>
+		    <tr>
+		      <td>Широта:</td>
+		      <td>
+		        <input type="text" value="" name="latitude" id="latitude" readonly="readonly"/>
+		      </td>
+		    </tr>
+		    <tr>
+		      <td>Долгота:</td>
+		      <td>
+		        <input type="text" value="" name="longitude" id="longitude" readonly="readonly"/>
+		      </td>
+		    </tr>
+		  </table>
+    </form>
+    <input type="submit"/>
+  </div>
 
 </body>
 </html>
