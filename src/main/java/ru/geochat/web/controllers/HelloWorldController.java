@@ -1,4 +1,4 @@
-package ru.geochat.web;
+package ru.geochat.web.controllers;
 
 import java.io.IOException;
 import java.io.Writer;
