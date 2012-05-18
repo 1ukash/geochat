@@ -11,8 +11,11 @@
 <title>GeoChat: Users</title>
 </head>
 <body>
-  <h2>New user has been created!</h2>
-  ${user.name }, ${user.email }
+  <h2>Hey!</h2>
+  
+  name: ${person.name} <br />
+  email: ${person.email } <br/>
+  id: ${person.id } <br/>
 
 </body>
 </html>

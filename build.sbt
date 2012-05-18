@@ -20,22 +20,25 @@ externalResolvers <<= resolvers map { rs =>
  *
  */
 libraryDependencies ++= Seq(
-  "javax.servlet" % "servlet-api" % "2.5" % "provided",
+  "javax.servlet" % "servlet-api" % "2.5" % "provided" withSources(),
   "org.eclipse.jetty" % "jetty-webapp" % "7.1.4.v20100610" % "container",
   "org.mortbay.jetty" % "jsp-2.1-glassfish" % "2.1.v20100127" % "container",
-  "javax.servlet.jsp" % "jsp-api" % "2.1" % "container",
+  "javax.servlet.jsp" % "jsp-api" % "2.1" % "container" withSources(),
   "javax.servlet" % "jstl" % "1.2",
-  "org.springframework" % "spring-core" % "3.1.1.RELEASE",
-  "org.springframework" % "spring-beans" % "3.1.1.RELEASE",
-  "org.springframework" % "spring-aop" % "3.1.1.RELEASE",
-  "org.springframework" % "spring-context" % "3.1.1.RELEASE",
-  "org.springframework" % "spring-context-support" % "3.1.1.RELEASE",
-  "org.springframework" % "spring-tx" % "3.1.1.RELEASE",
-  "org.springframework" % "spring-jdbc" % "3.1.1.RELEASE",
-  "org.springframework" % "spring-web" % "3.1.1.RELEASE",
-  "org.springframework" % "spring-webmvc" % "3.1.1.RELEASE",
-  "org.slf4j" % "slf4j-api" % "1.6.4",
-  "org.slf4j" % "slf4j-log4j12" % "1.6.4",
-  "log4j" % "log4j" % "1.2.16"
+  "org.springframework" % "spring-core" % "3.1.1.RELEASE" withSources(),
+  "org.springframework" % "spring-beans" % "3.1.1.RELEASE" withSources(),
+  "org.springframework" % "spring-aop" % "3.1.1.RELEASE" withSources(),
+  "org.springframework" % "spring-context" % "3.1.1.RELEASE" withSources(),
+  "org.springframework" % "spring-context-support" % "3.1.1.RELEASE" withSources(),
+  "org.springframework" % "spring-tx" % "3.1.1.RELEASE" withSources(),
+  "org.springframework" % "spring-jdbc" % "3.1.1.RELEASE" withSources(),
+  "org.springframework" % "spring-web" % "3.1.1.RELEASE" withSources(),
+  "org.springframework" % "spring-webmvc" % "3.1.1.RELEASE" withSources(),
+  "org.slf4j" % "slf4j-api" % "1.6.4" withSources(),
+  "org.slf4j" % "slf4j-log4j12" % "1.6.4" withSources(),
+  "log4j" % "log4j" % "1.2.16" withSources(),
+  "cglib" % "cglib" % "2.2.2" withSources(),
+  "aopalliance" % "aopalliance" % "1.0" withSources(),
+  "postgresql" % "postgresql" % "9.1-901-1.jdbc4"
 )
 

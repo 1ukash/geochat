@@ -14,8 +14,7 @@
   <h2>Create new user</h2>
   <f:form action="/users/create" modelAttribute="user" method="POST">
     name: <f:input path="name" /> <br/>
-    password: <f:password path="password" /> <br/>
-    age: <f:input path="age" />
+    email: <f:password path="email" /> <br/>
     <br/><f:button>submit</f:button>
   </f:form>
 
