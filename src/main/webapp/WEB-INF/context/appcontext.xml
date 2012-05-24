@@ -13,10 +13,19 @@
         http://www.springframework.org/schema/tx 
         http://www.springframework.org/schema/tx/spring-tx-3.1.xsd">
 
+	<bean id="propertyConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="locations">
+			<list>
+				<value>WEB-INF/context/environment.properties</value>
+			</list>
+		</property>
+	</bean>
+
 	<bean id="dataSource" class="org.postgresql.ds.PGPoolingDataSource" destroy-method="close">
-		<property name="serverName" value="localhost" />
-		<property name="databaseName" value="lukash" />
-		<property name="user" value="lukash" />
+		<property name="serverName" value="${db.host}" />
+		<property name="databaseName" value="${db.name}" />
+		<property name="user" value="${db.user}" />
+		<property name="password" value="${db.password}" />
 	</bean>
 
 	<bean id="txManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
