@@ -39,6 +39,9 @@ libraryDependencies ++= Seq(
   "log4j" % "log4j" % "1.2.16" withSources(),
   "cglib" % "cglib" % "2.2.2" withSources(),
   "aopalliance" % "aopalliance" % "1.0" withSources(),
-  "postgresql" % "postgresql" % "9.1-901-1.jdbc4"
+  "postgresql" % "postgresql" % "9.1-901-1.jdbc4",
+  "org.aspectj" % "aspectjrt" % "1.6.12",
+  "org.aspectj" % "aspectjweaver" % "1.6.12",
+  "org.aspectj" % "aspectjtools" % "1.6.12"
 )
 
