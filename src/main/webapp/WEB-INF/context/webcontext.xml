@@ -30,10 +30,10 @@
 	
 	<bean class="ru.geochat.web.controllers.HelloWorldController"/>
 	<bean class="ru.geochat.web.controllers.LocationController"/>
-  <bean class="ru.geochat.web.controllers.UserController">
-    <property name="profileManager">
-      <ref bean="profileManager"/>
-    </property>
-  </bean>
+    <bean class="ru.geochat.web.controllers.UserController">
+	    <property name="profileManager">
+	      <ref bean="profileManager"/>
+	    </property>
+    </bean>
 	
 </beans>
